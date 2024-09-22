@@ -77,9 +77,9 @@ server.post('/auth/login', (req, res) => {
 server.post('/auth/register', (req, res) => {
   console.log("Register endpoint called; request body:", req.body);
 
-  const { email, password, divisi, nama, alamat, role } = req.body;
+  const { email, password, nama, alamat, role } = req.body;
 
-  if (!email || !password || !divisi || !nama || !alamat || !role) {
+  if (!email || !password || !nama || !alamat || !role) {
     return res.status(400).json({ status: 400, message: 'All fields are required' });
   }
 
@@ -103,7 +103,6 @@ server.post('/auth/register', (req, res) => {
       id: last_item_id + 1,
       email,
       password,
-      divisi,
       nama,
       alamat,
       role
@@ -141,7 +140,7 @@ server.get('/users/:id', (req, res) => {
 
 // Update a user by ID
 server.put('/users/:id', (req, res) => {
-  const { email, password, divisi, nama, alamat } = req.body;
+  const { email, password, nama, alamat } = req.body;
   const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
   const userIndex = userData.users.findIndex(u => u.id === parseInt(req.params.id));
 
@@ -150,7 +149,6 @@ server.put('/users/:id', (req, res) => {
       id: parseInt(req.params.id),
       email,
       password,
-      divisi,
       nama,
       alamat
     };
