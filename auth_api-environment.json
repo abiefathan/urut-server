@@ -1,0 +1,19 @@
+{
+    "info": {
+      "name": "Auth API Environment",
+      "description": "Environment for Auth API.",
+      "schema": "https://schema.getpostman.com/json/environment/v2.1.0/environment.json"
+    },
+    "variable": [
+      {
+        "key": "baseUrl",
+        "value": "http://localhost:8000",
+        "enabled": true
+      }
+    ],
+    "timestamp": 0,
+    "synced": false,
+    "syncedAt": null,
+    "isDeleted": false
+  }
+  
