@@ -179,13 +179,7 @@
       "name": "Get All Orders",
       "request": {
         "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}",
-            "description": "Token from login response"
-          }
-        ],
+        "header": [],
         "url": {
           "raw": "http://localhost:8000/orders",
           "protocol": "http",
@@ -204,13 +198,7 @@
       "name": "Get Order by ID",
       "request": {
         "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}",
-            "description": "Token from login response"
-          }
-        ],
+        "header": [],
         "url": {
           "raw": "http://localhost:8000/orders/1",
           "protocol": "http",
@@ -230,13 +218,7 @@
       "name": "Create Order",
       "request": {
         "method": "POST",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}",
-            "description": "Token from login response"
-          }
-        ],
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\n    \"name\": \"Jane Doe\",\n    \"alamat\": \"jl baru\",\n    \"service\": \"Back Massage\",\n    \"status\": \"pending\"\n}",
@@ -264,13 +246,7 @@
       "name": "Update Order by ID",
       "request": {
         "method": "PUT",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}",
-            "description": "Token from login response"
-          }
-        ],
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\n    \"name\": \"Jane Doe\",\n    \"alamat\": \"jl baru\",\n    \"service\": \"Back Massage\",\n    \"status\": \"completed\"\n}",
@@ -299,13 +275,7 @@
       "name": "Delete Order by ID",
       "request": {
         "method": "DELETE",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}",
-            "description": "Token from login response"
-          }
-        ],
+        "header": [],
         "url": {
           "raw": "http://localhost:8000/orders/1",
           "protocol": "http",

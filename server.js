@@ -31,12 +31,16 @@ function verifyToken(token) {
 // Check if the user exists in database
 function isAuthenticated({ email, password }) {
   const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
-  // Perform simple password check
   return userData.users.find(user => user.email === email && user.password === password) !== undefined;
 }
 
-// Middleware to check if user is authenticated before accessing other routes
-server.use(/^(?!\/auth).*$/, (req, res, next) => {
+// Middleware to check if user is authenticated for specific routes
+server.use((req, res, next) => {
+  // Bypass authorization for /orders, /database, /recruitment, and others
+  if (req.path.startsWith('/orders') || req.path.startsWith('/database') || req.path.startsWith('/recruitment')) {
+    return next(); // Skip authentication
+  }
+
   const authHeader = req.headers.authorization;
   if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
     return res.status(401).json({ status: 401, message: 'Error in authorization format' });
@@ -55,7 +59,6 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
 // Login endpoint
 server.post('/auth/login', (req, res) => {
   const { email, password } = req.body;
-  console.log("Login attempt with:", { email, password });
 
   if (!email || !password) {
     return res.status(400).json({ status: 400, message: 'Email and password are required' });
@@ -65,18 +68,14 @@ server.post('/auth/login', (req, res) => {
     return res.status(401).json({ status: 401, message: 'Incorrect email or password' });
   }
 
-  // Create token with role
   const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
   const user = userData.users.find(user => user.email === email);
   const access_token = createToken({ role: user.role });
-  console.log("Generated Access Token:", access_token);
   res.status(200).json({ access_token });
 });
 
 // Register New User
 server.post('/auth/register', (req, res) => {
-  console.log("Register endpoint called; request body:", req.body);
-
   const { email, password, nama, alamat, role } = req.body;
 
   if (!email || !password || !nama || !alamat || !role) {
@@ -92,13 +91,9 @@ server.post('/auth/register', (req, res) => {
       return res.status(500).json({ status: 500, message: err.message });
     }
 
-    // Get current users data
     let userData = JSON.parse(fileData.toString());
-
-    // Get the id of last user
     let last_item_id = userData.users[userData.users.length - 1]?.id || 0;
 
-    // Add new user
     userData.users.push({
       id: last_item_id + 1,
       email,
@@ -108,14 +103,12 @@ server.post('/auth/register', (req, res) => {
       role
     });
 
-    fs.writeFile(userdbPath, JSON.stringify(userData, null, 2), (err) => {  // WRITE
+    fs.writeFile(userdbPath, JSON.stringify(userData, null, 2), (err) => {
       if (err) {
         return res.status(500).json({ status: 500, message: err.message });
       }
 
-      // Create token for new user with role
       const access_token = createToken({ role });
-      console.log("Access Token:" + access_token);
       res.status(200).json({ access_token });
     });
   });
@@ -123,12 +116,34 @@ server.post('/auth/register', (req, res) => {
 
 // Get all users
 server.get('/users', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
+    return res.status(401).json({ status: 401, message: 'Access token required' });
+  }
+
+  const token = authHeader.split(' ')[1];
+  const decoded = verifyToken(token);
+  if (!decoded) {
+    return res.status(401).json({ status: 401, message: 'Access token is invalid or expired' });
+  }
+
   const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
   res.json(userData);
 });
 
 // Get a user by ID
 server.get('/users/:id', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
+    return res.status(401).json({ status: 401, message: 'Access token required' });
+  }
+
+  const token = authHeader.split(' ')[1];
+  const decoded = verifyToken(token);
+  if (!decoded) {
+    return res.status(401).json({ status: 401, message: 'Access token is invalid or expired' });
+  }
+
   const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
   const user = userData.users.find(u => u.id === parseInt(req.params.id));
   if (user) {
@@ -140,6 +155,17 @@ server.get('/users/:id', (req, res) => {
 
 // Update a user by ID
 server.put('/users/:id', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
+    return res.status(401).json({ status: 401, message: 'Access token required' });
+  }
+
+  const token = authHeader.split(' ')[1];
+  const decoded = verifyToken(token);
+  if (!decoded) {
+    return res.status(401).json({ status: 401, message: 'Access token is invalid or expired' });
+  }
+
   const { email, password, nama, alamat } = req.body;
   const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
   const userIndex = userData.users.findIndex(u => u.id === parseInt(req.params.id));
@@ -162,6 +188,17 @@ server.put('/users/:id', (req, res) => {
 
 // Delete a user by ID
 server.delete('/users/:id', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
+    return res.status(401).json({ status: 401, message: 'Access token required' });
+  }
+
+  const token = authHeader.split(' ')[1];
+  const decoded = verifyToken(token);
+  if (!decoded) {
+    return res.status(401).json({ status: 401, message: 'Access token is invalid or expired' });
+  }
+
   const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
   const userIndex = userData.users.findIndex(u => u.id === parseInt(req.params.id));
 

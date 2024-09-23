@@ -1,13 +1,47 @@
 {
-  "orders": {
-    "id": 1,
-    "name": "John Doe",
-    "alamat": "jl desa mandiri",
-    "service": "Full Body Massage",
-    "status": "pending"
-  },
+  "orders": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "address": "jl desa mandiri",
+      "service": "Full Body Massage",
+      "status": "pending"
+    }
+  ],
   "status": {
     "status_id": 1,
     "status_name": "Processing"
-  }
+  },
+  "recruitment": [
+    {
+      "id": 1,
+      "nama": "jupri al kodir",
+      "email": "jupri@gmail.com",
+      "address": "jalan buntu 1",
+      "age": "41",
+      "phoneNumber": "080008888",
+      "nik": "23124234",
+      "gender": "cowok"
+    },
+    {
+      "nama": "jupri al kodir",
+      "email": "jupri@gmail.com",
+      "address": "jalan buntu 1",
+      "age": "41",
+      "phoneNumber": "080008888",
+      "nik": "23124234",
+      "gender": "cowok",
+      "id": 2
+    },
+    {
+      "nama": "kocak",
+      "email": "jupri@gmail.com",
+      "address": "jalan buntu 1",
+      "age": "41",
+      "phoneNumber": "080008888",
+      "nik": "23124234",
+      "gender": "cowok",
+      "id": 3
+    }
+  ]
 }
