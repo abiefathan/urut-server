@@ -42,6 +42,96 @@
       "nik": "23124234",
       "gender": "cowok",
       "id": 3
+    },
+    {
+      "nama": "asdasdasdas",
+      "email": "jupri@gmail.com",
+      "address": "jalan buntu 1",
+      "age": "41",
+      "phoneNumber": "080008888",
+      "nik": "23124234",
+      "gender": "cowok",
+      "id": 4
+    },
+    {
+      "nama": "asdasdasd",
+      "email": "asdas@gmail.com",
+      "address": "asdasdasasdasdsadasd",
+      "age": "dasd",
+      "phoneNumber": "asdasd",
+      "nik": "asdasd",
+      "gender": "asdas",
+      "id": 5
+    },
+    {
+      "nama": "asdasdasd",
+      "email": "asdas@gmail.com",
+      "address": "asdasdasasdasdsadasd",
+      "age": "dasd",
+      "phoneNumber": "asdasd",
+      "nik": "asdasd",
+      "gender": "asdas",
+      "id": 6
+    },
+    {
+      "nama": "asdasdasdas",
+      "email": "jupri@gmail.com",
+      "address": "jalan buntu 1",
+      "age": "41",
+      "phoneNumber": "080008888",
+      "nik": "23124234",
+      "gender": "cowok",
+      "id": 7
+    },
+    {
+      "nama": "asdasdasdas",
+      "email": "jupri@gmail.com",
+      "address": "jalan buntu 1",
+      "age": "41",
+      "phoneNumber": "080008888",
+      "nik": "23124234",
+      "gender": "cowok",
+      "id": 8
+    },
+    {
+      "nama": "asdsadasdasasdasdas",
+      "email": "jupri@gmail.com",
+      "address": "jalan buntu 1",
+      "age": "41",
+      "phoneNumber": "080008888",
+      "nik": "23124234",
+      "gender": "cowok",
+      "id": 9
+    },
+    {
+      "nama": "111111111111111111111111111111",
+      "email": "asdas@gmail.com",
+      "address": "asdasdasasdasdsadasd",
+      "age": "dasd",
+      "phoneNumber": "asdasd",
+      "nik": "asdasd",
+      "gender": "asdas",
+      "id": 10
+    },
+    {
+      "nama": "111111111111111111111111111111",
+      "email": "asdas@gmail.com",
+      "address": "asdasdasasdasdsadasd",
+      "age": "dasd",
+      "phoneNumber": "asdasd",
+      "nik": "asdasd",
+      "gender": "asdas",
+      "id": 11
+    },
+    {
+      "nama": "111111111111111111111111111111",
+      "email": "asdas@gmail.com",
+      "address": "asdasdasasdasdsadasd",
+      "age": "dasd",
+      "phoneNumber": "asdasd",
+      "nik": "asdasd",
+      "gender": "asdas",
+      "id": 12
     }
   ]
 }

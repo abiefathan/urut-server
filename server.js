@@ -36,8 +36,14 @@ function isAuthenticated({ email, password }) {
 
 // Middleware to check if user is authenticated for specific routes
 server.use((req, res, next) => {
-  // Bypass authorization for /orders, /database, /recruitment, and others
-  if (req.path.startsWith('/orders') || req.path.startsWith('/database') || req.path.startsWith('/recruitment')) {
+  // Bypass authorization for /orders, /database, /recruitment, /auth/login, and /auth/register
+  if (
+    req.path.startsWith('/orders') || 
+    req.path.startsWith('/database') || 
+    req.path.startsWith('/recruitment') || 
+    req.path === '/auth/login' || 
+    req.path === '/auth/register'
+  ) {
     return next(); // Skip authentication
   }
 
@@ -114,7 +120,7 @@ server.post('/auth/register', (req, res) => {
   });
 });
 
-// Get all users
+// Get all users (protected route)
 server.get('/users', (req, res) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
@@ -131,7 +137,7 @@ server.get('/users', (req, res) => {
   res.json(userData);
 });
 
-// Get a user by ID
+// Get a user by ID (protected route)
 server.get('/users/:id', (req, res) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
@@ -148,64 +154,6 @@ server.get('/users/:id', (req, res) => {
   const user = userData.users.find(u => u.id === parseInt(req.params.id));
   if (user) {
     res.json(user);
-  } else {
-    res.status(404).json({ status: 404, message: 'User not found' });
-  }
-});
-
-// Update a user by ID
-server.put('/users/:id', (req, res) => {
-  const authHeader = req.headers.authorization;
-  if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
-    return res.status(401).json({ status: 401, message: 'Access token required' });
-  }
-
-  const token = authHeader.split(' ')[1];
-  const decoded = verifyToken(token);
-  if (!decoded) {
-    return res.status(401).json({ status: 401, message: 'Access token is invalid or expired' });
-  }
-
-  const { email, password, nama, alamat } = req.body;
-  const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
-  const userIndex = userData.users.findIndex(u => u.id === parseInt(req.params.id));
-
-  if (userIndex !== -1) {
-    userData.users[userIndex] = {
-      id: parseInt(req.params.id),
-      email,
-      password,
-      nama,
-      alamat
-    };
-
-    fs.writeFileSync(userdbPath, JSON.stringify(userData, null, 2));
-    res.json(userData.users[userIndex]);
-  } else {
-    res.status(404).json({ status: 404, message: 'User not found' });
-  }
-});
-
-// Delete a user by ID
-server.delete('/users/:id', (req, res) => {
-  const authHeader = req.headers.authorization;
-  if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
-    return res.status(401).json({ status: 401, message: 'Access token required' });
-  }
-
-  const token = authHeader.split(' ')[1];
-  const decoded = verifyToken(token);
-  if (!decoded) {
-    return res.status(401).json({ status: 401, message: 'Access token is invalid or expired' });
-  }
-
-  const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
-  const userIndex = userData.users.findIndex(u => u.id === parseInt(req.params.id));
-
-  if (userIndex !== -1) {
-    userData.users.splice(userIndex, 1);
-    fs.writeFileSync(userdbPath, JSON.stringify(userData, null, 2));
-    res.status(204).end();
   } else {
     res.status(404).json({ status: 404, message: 'User not found' });
   }
