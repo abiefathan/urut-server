@@ -18,9 +18,9 @@ Might need to run
 npm audit fix
 ```
 
-## How to login/register?
+## gimana cara http reqwest untuk login dan register?
 
-BUAT ENDPOINT LOGINNYA YANG INI
+BUAT ENDPOINT LOGIN & YANG INI
 
 ```
 POST http://localhost:8000/auth/login

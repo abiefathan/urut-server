@@ -36,7 +36,7 @@ function isAuthenticated({ email, password }) {
 
 // Middleware to check if user is authenticated for specific routes
 server.use((req, res, next) => {
-  // Bypass authorization for /orders, /database, /recruitment, /auth/login, and /auth/register
+  // Bypass authorization for certain endpoints
   if (
     req.path.startsWith('/orders') || 
     req.path.startsWith('/database') || 
@@ -81,15 +81,18 @@ server.post('/auth/login', (req, res) => {
 });
 
 // Register New User
+// Register New User
 server.post('/auth/register', (req, res) => {
-  const { email, password, nama, alamat, role } = req.body;
+  const { email, password, name, address, age, phoneNumber, nik, gender, ktp, kk, role } = req.body;
 
-  if (!email || !password || !nama || !alamat || !role) {
+  // Validasi input
+  if (!email || !password || !name || !address || !age || !phoneNumber || !nik || !gender || !ktp || !kk || !role) {
     return res.status(400).json({ status: 400, message: 'All fields are required' });
   }
 
+  // Cek apakah email sudah ada
   if (isAuthenticated({ email, password })) {
-    return res.status(400).json({ status: 400, message: 'Email and Password already exist' });
+    return res.status(400).json({ status: 400, message: 'Email already exists' });
   }
 
   fs.readFile(userdbPath, (err, fileData) => {
@@ -100,12 +103,19 @@ server.post('/auth/register', (req, res) => {
     let userData = JSON.parse(fileData.toString());
     let last_item_id = userData.users[userData.users.length - 1]?.id || 0;
 
+    // Tambahkan pengguna baru ke data
     userData.users.push({
       id: last_item_id + 1,
       email,
       password,
-      nama,
-      alamat,
+      name,
+      address,
+      age,
+      phoneNumber,
+      nik,
+      gender,
+      ktp,
+      kk,
       role
     });
 
@@ -114,11 +124,12 @@ server.post('/auth/register', (req, res) => {
         return res.status(500).json({ status: 500, message: err.message });
       }
 
-      const access_token = createToken({ role });
-      res.status(200).json({ access_token });
+     
+      res.status(201).json("succes registed"); // Menggunakan 201 Created
     });
   });
 });
+
 
 // Get all users (protected route)
 server.get('/users', (req, res) => {
@@ -159,7 +170,81 @@ server.get('/users/:id', (req, res) => {
   }
 });
 
-// Use JSON Server router
+// Update a user by ID (protected route)
+server.patch('/users/:id', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
+    return res.status(401).json({ status: 401, message: 'Access token required' });
+  }
+
+  const token = authHeader.split(' ')[1];
+  const decoded = verifyToken(token);
+  if (!decoded) {
+    return res.status(401).json({ status: 401, message: 'Access token is invalid or expired' });
+  }
+
+  fs.readFile(userdbPath, (err, fileData) => {
+    if (err) {
+      return res.status(500).json({ status: 500, message: err.message });
+    }
+
+    let userData = JSON.parse(fileData.toString());
+    const userIndex = userData.users.findIndex(u => u.id === parseInt(req.params.id));
+
+    if (userIndex === -1) {
+      return res.status(404).json({ status: 404, message: 'User not found' });
+    }
+
+    userData.users[userIndex] = { ...userData.users[userIndex], ...req.body };
+
+    fs.writeFile(userdbPath, JSON.stringify(userData, null, 2), (err) => {
+      if (err) {
+        return res.status(500).json({ status: 500, message: err.message });
+      }
+
+      res.status(200).json(userData.users[userIndex]);
+    });
+  });
+});
+
+// Delete a user by ID (protected route)
+server.delete('/users/:id', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
+    return res.status(401).json({ status: 401, message: 'Access token required' });
+  }
+
+  const token = authHeader.split(' ')[1];
+  const decoded = verifyToken(token);
+  if (!decoded) {
+    return res.status(401).json({ status: 401, message: 'Access token is invalid or expired' });
+  }
+
+  fs.readFile(userdbPath, (err, fileData) => {
+    if (err) {
+      return res.status(500).json({ status: 500, message: err.message });
+    }
+
+    let userData = JSON.parse(fileData.toString());
+    const userIndex = userData.users.findIndex(u => u.id === parseInt(req.params.id));
+
+    if (userIndex === -1) {
+      return res.status(404).json({ status: 404, message: 'User not found' });
+    }
+
+    userData.users.splice(userIndex, 1); // Remove user
+
+    fs.writeFile(userdbPath, JSON.stringify(userData, null, 2), (err) => {
+      if (err) {
+        return res.status(500).json({ status: 500, message: err.message });
+      }
+
+      res.status(204).send(); // No content
+    });
+  });
+});
+
+// Use JSON Server router for main data
 server.use(router);
 
 server.listen(8000, () => {
