@@ -170,7 +170,7 @@ server.get('/users/:id', (req, res) => {
 });
 
 // Update a user by ID (protected route)
-server.patch('/users/:id', (req, res) => {
+server.put('/users/:id', (req, res) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
     return res.status(401).json({ status: 401, message: 'Access token required' });

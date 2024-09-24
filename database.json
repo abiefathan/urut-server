@@ -14,57 +14,17 @@
       "status_name": "Processing"
     }
   ],
-  "transactions":[
-    
-  ],
+  "transactions": [],
   "recruitment": [
     {
-      "id": 1,
-      "name": "jupri al kodir",
-      "email": "jupri@gmail.com",
-      "address": "jalan buntu 1",
-      "age": "41",
-      "phoneNumber": "222222",
-      "nik": "23124234",
-      "gender": "cowok",
-      "ktp": "2222222222",
-      "kk":"222222222222"
-    },
-    {
-      "name": "jamal",
-      "email": "jamal@gmail.com",
-      "address": "jalanjamal",
-      "age": "41",
-      "phoneNumber": "111111111",
-      "nik": "23124234",
-      "gender": "cowok",
-      "ktp": "111111111111",
-      "kk":"1111111111111",
-      "id": 2
-    },
-    {
-      "name": "kocak",
-      "email": "kocak@gmail.com",
-      "address": "jalan kocak",
-      "age": "41",
-      "phoneNumber": "080008888",
-      "nik": "23124234",
-      "gender": "cowok",
-      "ktp": "3423434",
-      "kk":"23423432",
-      "id": 3
-    },
-    {
-      "name": "meli",
-      "email": "meli@gmail.com",
-      "address": "jl.meli selalu di hati",
-      "age": "dasd",
-      "phoneNumber": "333333333",
-      "nik": "asdasd",
-      "gender": "asdas",
-      "ktp": "3423434",
-      "kk":"23423432",
-      "id": 4
+      "name": "sads",
+      "email": "yazid@gmail.com",
+      "address": "jalan yazid",
+      "age": "25",
+      "phoneNumber": "0895959595",
+      "nik": "2323",
+      "gender": "21",
+      "id": 5
     }
   ]
 }

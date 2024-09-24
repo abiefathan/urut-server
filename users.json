@@ -25,6 +25,32 @@
       "ktp": "3423434",
       "kk": "23423432",
       "role": "admin"
+    },
+    {
+      "id": 3,
+      "email": "jupri@gmail.com",
+      "password": "password",
+      "name": "jupri al kodi",
+      "address": "jalan buntu 1",
+      "age": "41",
+      "phoneNumber": "222222",
+      "gender": "cowok",
+      "ktp": "2222222222",
+      "kk": "222222222222",
+      "role": "employe"
+    },
+    {
+      "id": 5,
+      "email": "yazid@gmail.com",
+      "password": "password",
+      "name": "abiabi",
+      "address": "jalan yazid",
+      "age": "25",
+      "phoneNumber": "0895959595",
+      "gender": "21",
+      "ktp": "23223",
+      "kk": "232",
+      "role": "employe"
     }
   ]
 }
