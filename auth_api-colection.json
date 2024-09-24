@@ -35,7 +35,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"email\": \"newuser@example.com\",\n    \"password\": \"newpassword\",\n    \"name\": \"New User\",\n    \"address\": \"123 New Street\",\n    \"age\": \"30\",\n    \"phoneNumber\": \"08123456789\",\n    \"nik\": \"12345678\",\n    \"gender\": \"cowok\",\n    \"ktp\": \"123456\",\n    \"kk\": \"789012\",\n    \"role\": \"employe\"\n}"
+          "raw": "{\n    \"email\": \"newuser@example.com\",\n    \"password\": \"newpassword\",\n    \"name\": \"New User\",\n    \"address\": \"123 New Street\",\n    \"age\": \"30\",\n    \"phoneNumber\": \"08123456789\",\n     \"gender\": \"cowok\",\n    \"ktp\": \"123456\",\n    \"kk\": \"789012\",\n    \"role\": \"employe\"\n}"
         }
       }
     },

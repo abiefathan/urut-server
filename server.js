@@ -80,13 +80,13 @@ server.post('/auth/login', (req, res) => {
   res.status(200).json({ access_token });
 });
 
-// Register New User
+
 // Register New User
 server.post('/auth/register', (req, res) => {
-  const { email, password, name, address, age, phoneNumber, nik, gender, ktp, kk, role } = req.body;
+  const { email, password, name, address, age, phoneNumber, gender, ktp, kk, role } = req.body;
 
   // Validasi input
-  if (!email || !password || !name || !address || !age || !phoneNumber || !nik || !gender || !ktp || !kk || !role) {
+  if (!email || !password || !name || !address || !age || !phoneNumber || !gender || !ktp || !kk || !role) {
     return res.status(400).json({ status: 400, message: 'All fields are required' });
   }
 
@@ -112,7 +112,6 @@ server.post('/auth/register', (req, res) => {
       address,
       age,
       phoneNumber,
-      nik,
       gender,
       ktp,
       kk,

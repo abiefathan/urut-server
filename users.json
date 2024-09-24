@@ -8,7 +8,6 @@
       "address": "jalan buntu 1",
       "age": "21",
       "phoneNumber": "220008888",
-      "nik": "23124234",
       "gender": "cowok",
       "ktp": "3423434",
       "kk": "23423432",
@@ -22,25 +21,10 @@
       "address": "jalan jalan",
       "age": "21",
       "phoneNumber": "220008888",
-      "nik": "23124234",
       "gender": "cowok",
       "ktp": "3423434",
       "kk": "23423432",
       "role": "admin"
-    },
-    {
-      "id": 3,
-      "name": "jujun",
-      "email": "jujun@gmail.com",
-      "password": "abiabi",
-      "address": "jalan buntu 1",
-      "age": "21",
-      "phoneNumber": "220008888",
-      "nik": "23124234",
-      "gender": "cowok",
-      "ktp": "3423434",
-      "kk": "23423432",
-      "role": "employe"
     }
   ]
 }

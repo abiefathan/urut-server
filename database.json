@@ -8,10 +8,15 @@
       "status": "pending"
     }
   ],
-  "status": {
-    "status_id": 1,
-    "status_name": "Processing"
-  },
+  "status": [
+    {
+      "status_id": 1,
+      "status_name": "Processing"
+    }
+  ],
+  "transactions":[
+    
+  ],
   "recruitment": [
     {
       "id": 1,
@@ -19,28 +24,28 @@
       "email": "jupri@gmail.com",
       "address": "jalan buntu 1",
       "age": "41",
-      "phoneNumber": "080008888",
+      "phoneNumber": "222222",
       "nik": "23124234",
       "gender": "cowok",
-      "ktp": "3423434",
-      "kk":"23423432"
+      "ktp": "2222222222",
+      "kk":"222222222222"
     },
     {
-      "name": "jupri al kodir",
-      "email": "jupri@gmail.com",
-      "address": "jalan buntu 1",
+      "name": "jamal",
+      "email": "jamal@gmail.com",
+      "address": "jalanjamal",
       "age": "41",
-      "phoneNumber": "080008888",
+      "phoneNumber": "111111111",
       "nik": "23124234",
       "gender": "cowok",
-      "ktp": "3423434",
-      "kk":"23423432",
+      "ktp": "111111111111",
+      "kk":"1111111111111",
       "id": 2
     },
     {
       "name": "kocak",
-      "email": "jupri@gmail.com",
-      "address": "jalan buntu 1",
+      "email": "kocak@gmail.com",
+      "address": "jalan kocak",
       "age": "41",
       "phoneNumber": "080008888",
       "nik": "23124234",
@@ -50,28 +55,16 @@
       "id": 3
     },
     {
-      "name": "asdasdasd",
-      "email": "asdas@gmail.com",
-      "address": "asdasdasasdasdsadasd",
+      "name": "meli",
+      "email": "meli@gmail.com",
+      "address": "jl.meli selalu di hati",
       "age": "dasd",
-      "phoneNumber": "asdasd",
+      "phoneNumber": "333333333",
       "nik": "asdasd",
       "gender": "asdas",
       "ktp": "3423434",
       "kk":"23423432",
       "id": 4
-    },
-    {
-      "name": "111111111111111111111111111111",
-      "email": "asdas@gmail.com",
-      "address": "asdasdasasdasdsadasd",
-      "age": "dasd",
-      "phoneNumber": "asdasd",
-      "nik": "asdasd",
-      "gender": "asdas",
-      "ktp": "3423434",
-      "kk":"23423432",
-      "id": 5
     }
   ]
 }
