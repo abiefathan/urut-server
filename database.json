@@ -1,4 +1,18 @@
 {
+  "price": [
+    {
+      "id": 1,
+      "range": "Rp . 100.000 - Rp. 150.000"
+    },
+    {
+      "id": 2,
+      "range": "Rp. 150.000 - Rp. 200.000"
+    },
+    {
+      "id": 3,
+      "range": "Rp. 200.000 - Rp. 300.000"
+    }
+  ],
   "orders": [
     {
       "id": 1,
@@ -17,10 +31,19 @@
       "phoneNumber": "Full Body Massage",
       "email": "pending",
       "budget": "Rp. 100.000 - Rp. 150.000"
+    },
+    {
+      "name": "jakun",
+      "address": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
+      "district": "bogor",
+      "phoneNumber": "085710996038",
+      "email": "jupri@gmail.com",
+      "budget": "$.0",
+      "id": 3
     }
   ],
- "bidAccept" : [
-     {
+  "bidAccept": [
+    {
       "id": 1,
       "name": "John Doe",
       "address": "jl desa mandiri",
@@ -28,22 +51,22 @@
       "phoneNumber": "Full Body Massage",
       "email": "pending",
       "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget" : "Rp. 150.000",
+      "dealBudget": "Rp. 150.000",
       "employeInfo": {
-      "email": "jupri@gmail.com",
-      "password": "password",
-      "name": "jupri al kodi nambawan",
-      "address": "jalan buntu 1",
-                "district" : "Bandung",
-      "age": "41",
-      "phoneNumber": "222222",
-      "gender": "cowok",
-      "ktp": "2222222222",
-      "kk": "222222222222",
-      "role": "employe"}
+        "email": "jupri@gmail.com",
+        "password": "password",
+        "name": "jupri al kodi nambawan",
+        "address": "jalan buntu 1",
+        "district": "Bandung",
+        "age": "41",
+        "phoneNumber": "222222",
+        "gender": "cowok",
+        "ktp": "2222222222",
+        "kk": "222222222222",
+        "role": "employe"
+      }
     }
-],
-
+  ],
   "status": [
     {
       "status_id": 1,
@@ -51,7 +74,7 @@
     }
   ],
   "transactions": [
-{
+    {
       "id": 1,
       "name": "Johnny",
       "address": "jl desa mandiri",
@@ -59,21 +82,22 @@
       "phoneNumber": "Full Body Massage",
       "email": "pending",
       "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget" : "Rp. 150.000",
+      "dealBudget": "Rp. 150.000",
       "employeInfo": {
-      "email": "jupri@gmail.com",
-      "password": "password",
-      "name": "jupri al kodi nambawan",
-      "address": "jalan buntu 1",
-                "district" : "Bandung",
-      "age": "41",
-      "phoneNumber": "222222",
-      "gender": "cowok",
-      "ktp": "2222222222",
-      "kk": "222222222222",
-      "role": "employe"}
+        "email": "jupri@gmail.com",
+        "password": "password",
+        "name": "jupri al kodi nambawan",
+        "address": "jalan buntu 1",
+        "district": "Bandung",
+        "age": "41",
+        "phoneNumber": "222222",
+        "gender": "cowok",
+        "ktp": "2222222222",
+        "kk": "222222222222",
+        "role": "employe"
+      }
     }
-],
+  ],
   "recruitment": [
     {
       "name": "sads",
@@ -86,6 +110,4 @@
       "id": 5
     }
   ]
-
-
 }

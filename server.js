@@ -35,18 +35,23 @@ function isAuthenticated({ email, password }) {
 }
 
 // Middleware to check if user is authenticated for specific routes
+// Middleware to check if user is authenticated for specific routes
 server.use((req, res, next) => {
-  // Bypass authorization for certain endpoints
+  // Bypass authorization for database.json-related endpoints
   if (
     req.path.startsWith('/orders') || 
-    req.path.startsWith('/database') || 
-    req.path.startsWith('/recruitment') || 
+    req.path.startsWith('/price') || 
+    req.path.startsWith('/bidAccept') ||
+    req.path.startsWith('/status') ||
+    req.path.startsWith('/transactions') ||
+    req.path.startsWith('/recruitment') ||
     req.path === '/auth/login' || 
     req.path === '/auth/register'
   ) {
     return next(); // Skip authentication
   }
 
+  // For users.json-related endpoints, require authentication
   const authHeader = req.headers.authorization;
   if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
     return res.status(401).json({ status: 401, message: 'Error in authorization format' });
@@ -61,6 +66,7 @@ server.use((req, res, next) => {
   req.user = decoded; // Store role from token in request object
   next();
 });
+
 
 // Login endpoint
 server.post('/auth/login', (req, res) => {
