@@ -76,17 +76,23 @@ server.post('/auth/login', (req, res) => {
 
   const userData = JSON.parse(fs.readFileSync(userdbPath, 'UTF-8'));
   const user = userData.users.find(user => user.email === email);
-  const access_token = createToken({ role: user.role });
+  
+  // Tambahkan email ke dalam payload token
+  const access_token = createToken({ role: user.role, email: user.email });
   res.status(200).json({ access_token });
 });
+
+// Verify token function remains the same
+// Middleware and other endpoints remain unchanged
+
 
 
 // Register New User
 server.post('/auth/register', (req, res) => {
-  const { email, password, name, address, age, phoneNumber, gender, ktp, kk, role } = req.body;
+  const { email, password, name, address, age, phoneNumber, gender, ktp, kk, role, district } = req.body;
 
   // Validasi input
-  if (!email || !password || !name || !address || !age || !phoneNumber || !gender || !ktp || !kk || !role) {
+  if (!email || !password || !name || !address || !age || !phoneNumber || !gender || !ktp || !kk || !role || !district) {
     return res.status(400).json({ status: 400, message: 'All fields are required' });
   }
 
@@ -111,6 +117,7 @@ server.post('/auth/register', (req, res) => {
       name,
       address,
       age,
+      district, // Tambahkan district di sini
       phoneNumber,
       gender,
       ktp,
@@ -123,8 +130,7 @@ server.post('/auth/register', (req, res) => {
         return res.status(500).json({ status: 500, message: err.message });
       }
 
-     
-      res.status(201).json("succes registed"); // Menggunakan 201 Created
+      res.status(201).json("success registed"); // Menggunakan 201 Created
     });
   });
 });
@@ -194,7 +200,7 @@ server.put('/users/:id', (req, res) => {
       return res.status(404).json({ status: 404, message: 'User not found' });
     }
 
-    userData.users[userIndex] = { ...userData.users[userIndex], ...req.body };
+    userData.users[userIndex] = { ...userData.users[userIndex], ...req.body }; // Memperbarui data pengguna termasuk district
 
     fs.writeFile(userdbPath, JSON.stringify(userData, null, 2), (err) => {
       if (err) {
@@ -205,6 +211,7 @@ server.put('/users/:id', (req, res) => {
     });
   });
 });
+
 
 // Delete a user by ID (protected route)
 server.delete('/users/:id', (req, res) => {

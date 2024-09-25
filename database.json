@@ -4,17 +4,76 @@
       "id": 1,
       "name": "John Doe",
       "address": "jl desa mandiri",
-      "service": "Full Body Massage",
-      "status": "pending"
+      "district": "Bogor",
+      "phoneNumber": "Full Body Massage",
+      "email": "pending",
+      "budget": "Rp. 100.000 - Rp. 150.000"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "address": "jl desa mandiri",
+      "district": "Bandung",
+      "phoneNumber": "Full Body Massage",
+      "email": "pending",
+      "budget": "Rp. 100.000 - Rp. 150.000"
     }
   ],
+ "bidAccept" : [
+     {
+      "id": 1,
+      "name": "John Doe",
+      "address": "jl desa mandiri",
+      "district": "Bandung",
+      "phoneNumber": "Full Body Massage",
+      "email": "pending",
+      "budget": "Rp. 100.000 - Rp. 150.000",
+      "dealBudget" : "Rp. 150.000",
+      "employeInfo": {
+      "email": "jupri@gmail.com",
+      "password": "password",
+      "name": "jupri al kodi nambawan",
+      "address": "jalan buntu 1",
+                "district" : "Bandung",
+      "age": "41",
+      "phoneNumber": "222222",
+      "gender": "cowok",
+      "ktp": "2222222222",
+      "kk": "222222222222",
+      "role": "employe"}
+    }
+],
+
   "status": [
     {
       "status_id": 1,
       "status_name": "Processing"
     }
   ],
-  "transactions": [],
+  "transactions": [
+{
+      "id": 1,
+      "name": "Johnny",
+      "address": "jl desa mandiri",
+      "district": "Bandung",
+      "phoneNumber": "Full Body Massage",
+      "email": "pending",
+      "budget": "Rp. 100.000 - Rp. 150.000",
+      "dealBudget" : "Rp. 150.000",
+      "employeInfo": {
+      "email": "jupri@gmail.com",
+      "password": "password",
+      "name": "jupri al kodi nambawan",
+      "address": "jalan buntu 1",
+                "district" : "Bandung",
+      "age": "41",
+      "phoneNumber": "222222",
+      "gender": "cowok",
+      "ktp": "2222222222",
+      "kk": "222222222222",
+      "role": "employe"}
+    }
+],
   "recruitment": [
     {
       "name": "sads",
@@ -27,4 +86,6 @@
       "id": 5
     }
   ]
+
+
 }
