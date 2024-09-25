@@ -1,91 +1,17 @@
 {
-  "orders": [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bogor",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000"
-    },
-    {
-      "id": 2,
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000"
-    }
-  ],
- "bidAccept" : [
-     {
-      "id": 1,
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget" : "Rp. 150.000",
-      "employeInfo": {
-      "email": "jupri@gmail.com",
-      "password": "password",
-      "name": "jupri al kodi nambawan",
-      "address": "jalan buntu 1",
-                "district" : "Bandung",
-      "age": "41",
-      "phoneNumber": "222222",
-      "gender": "cowok",
-      "ktp": "2222222222",
-      "kk": "222222222222",
-      "role": "employe"}
-    }
-],
-
-  "status": [
-    {
-      "status_id": 1,
-      "status_name": "Processing"
-    }
-  ],
-  "transactions": [
-{
-      "id": 1,
-      "name": "Johnny",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget" : "Rp. 150.000",
-      "employeInfo": {
-      "email": "jupri@gmail.com",
-      "password": "password",
-      "name": "jupri al kodi nambawan",
-      "address": "jalan buntu 1",
-                "district" : "Bandung",
-      "age": "41",
-      "phoneNumber": "222222",
-      "gender": "cowok",
-      "ktp": "2222222222",
-      "kk": "222222222222",
-      "role": "employe"}
-    }
-],
-  "recruitment": [
-    {
-      "name": "sads",
-      "email": "yazid@gmail.com",
-      "address": "jalan yazid",
-      "age": "25",
-      "phoneNumber": "0895959595",
-      "nik": "2323",
-      "gender": "21",
-      "id": 5
-    }
-  ]
-
-
+  "name": "json-server-api",
+  "version": "1.0.0",
+  "description": "Simple Fake API",
+  "main": "main.js",
+  "scripts": {
+    "start": "json-server --watch ./database.json",
+    "server": "node server.js"
+  },
+  "author": "ME:)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "json-server": "^0.14.2",
+    "jsonwebtoken": "^8.1.0" 
+  }
 }
