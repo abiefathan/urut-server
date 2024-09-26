@@ -35,9 +35,9 @@ function isAuthenticated({ email, password }) {
 }
 
 //
-// Middleware to check if user is authenticated for specific routes
+// Middleware
 server.use((req, res, next) => {
-  // Bypass authorization for database.json-related endpoints
+  
   if (
     req.path.startsWith('/orders') || 
     req.path.startsWith('/price') || 
@@ -52,7 +52,7 @@ server.use((req, res, next) => {
     return next(); // Skip authentication
   }
 
-  // For users.json-related endpoints, require authentication
+  
   const authHeader = req.headers.authorization;
   if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
     return res.status(401).json({ status: 401, message: 'Error in authorization format' });
@@ -64,7 +64,7 @@ server.use((req, res, next) => {
     return res.status(401).json({ status: 401, message: 'Access token is invalid or expired' });
   }
 
-  req.user = decoded; // Store role from token in request object
+  req.user = decoded; 
   next();
 });
 
@@ -90,7 +90,6 @@ server.post('/auth/login', (req, res) => {
 });
 
 // Verify token function remains the same
-// Middleware and other endpoints remain unchanged
 
 
 
@@ -103,7 +102,7 @@ server.post('/auth/register', (req, res) => {
     return res.status(400).json({ status: 400, message: 'All fields are required' });
   }
 
-  // Cek apakah email sudah ada
+  // Cek cek apa udah ada ges
   if (isAuthenticated({ email, password })) {
     return res.status(400).json({ status: 400, message: 'Email already exists' });
   }
@@ -124,7 +123,7 @@ server.post('/auth/register', (req, res) => {
       name,
       address,
       age,
-      district, // Tambahkan district di sini
+      district, 
       phoneNumber,
       gender,
       ktp,
@@ -257,7 +256,7 @@ server.delete('/users/:id', (req, res) => {
   });
 });
 
-// Use JSON Server router for main data
+
 server.use(router);
 
 server.listen(8000, () => {
