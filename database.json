@@ -65,6 +65,121 @@
         "kk": "222222222222",
         "role": "employe"
       }
+    },
+    {
+      "name": "John Doe",
+      "address": "jl desa mandiri",
+      "district": "Bandung",
+      "phoneNumber": "Full Body Massage",
+      "email": "pending",
+      "budget": "Rp. 100.000 - Rp. 150.000",
+      "dealBudget": "",
+      "employeInfo": {
+        "email": "lalaland@gmail.com",
+        "password": "password",
+        "name": "lalaland",
+        "address": "jalan buntu 2",
+        "district": "Bogor",
+        "age": "42",
+        "phoneNumber": "321321321312321",
+        "gender": "man",
+        "ktp": "321312312321",
+        "kk": "222222222222",
+        "role": "employe"
+      },
+      "id": 2
+    },
+    {
+      "name": "John Doe",
+      "address": "jl desa mandiri",
+      "district": "Bandung",
+      "phoneNumber": "Full Body Massage",
+      "email": "pending",
+      "budget": "Rp. 100.000 - Rp. 150.000",
+      "dealBudget": "",
+      "employeInfo": {
+        "email": "lalaland@gmail.com",
+        "password": "password",
+        "name": "lalaland",
+        "address": "jalan buntu 2",
+        "district": "Bogor",
+        "age": "42",
+        "phoneNumber": "321321321312321",
+        "gender": "man",
+        "ktp": "321312312321",
+        "kk": "222222222222",
+        "role": "employe"
+      },
+      "id": 3
+    },
+    {
+      "name": "John Doe",
+      "address": "jl desa mandiri",
+      "district": "Bandung",
+      "phoneNumber": "Full Body Massage",
+      "email": "pending",
+      "budget": "Rp. 100.000 - Rp. 150.000",
+      "dealBudget": "555555555555555555555555555555555",
+      "employeInfo": {
+        "email": "lalaland@gmail.com",
+        "password": "password",
+        "name": "lalaland",
+        "address": "jalan buntu 2",
+        "district": "Bogor",
+        "age": "42",
+        "phoneNumber": "321321321312321",
+        "gender": "man",
+        "ktp": "321312312321",
+        "kk": "222222222222",
+        "role": "employe"
+      },
+      "id": 4
+    },
+    {
+      "name": "John Doe",
+      "address": "jl desa mandiri",
+      "district": "Bandung",
+      "phoneNumber": "Full Body Massage",
+      "email": "pending",
+      "budget": "Rp. 100.000 - Rp. 150.000",
+      "dealBudget": "555555555555555555555555555555555",
+      "employeInfo": {
+        "email": "lalaland@gmail.com",
+        "password": "password",
+        "name": "lalaland",
+        "address": "jalan buntu 2",
+        "district": "Bogor",
+        "age": "42",
+        "phoneNumber": "321321321312321",
+        "gender": "man",
+        "ktp": "321312312321",
+        "kk": "222222222222",
+        "role": "employe"
+      },
+      "id": 5
+    },
+    {
+      "name": "John Doe",
+      "address": "jl desa mandiri",
+      "district": "Bandung",
+      "phoneNumber": "Full Body Massage",
+      "email": "pending",
+      "budget": "Rp. 100.000 - Rp. 150.000",
+      "dealBudget": "",
+      "employeInfo": {
+        "email": "lalaland@gmail.com",
+        "password": "password",
+        "name": "lalaland",
+        "address": "jalan buntu 2",
+        "district": "Bogor",
+        "age": "42",
+        "phoneNumber": "321321321312321",
+        "gender": "man",
+        "ktp": "321312312321",
+        "kk": "222222222222",
+        "role": "employe"
+      },
+      "id": 6
     }
   ],
   "status": [

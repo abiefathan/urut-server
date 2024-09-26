@@ -34,7 +34,7 @@ function isAuthenticated({ email, password }) {
   return userData.users.find(user => user.email === email && user.password === password) !== undefined;
 }
 
-// Middleware to check if user is authenticated for specific routes
+//
 // Middleware to check if user is authenticated for specific routes
 server.use((req, res, next) => {
   // Bypass authorization for database.json-related endpoints
@@ -42,6 +42,7 @@ server.use((req, res, next) => {
     req.path.startsWith('/orders') || 
     req.path.startsWith('/price') || 
     req.path.startsWith('/bidAccept') ||
+    req.path.startsWith('/bidPending') ||
     req.path.startsWith('/status') ||
     req.path.startsWith('/transactions') ||
     req.path.startsWith('/recruitment') ||
