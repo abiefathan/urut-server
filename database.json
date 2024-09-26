@@ -15,71 +15,80 @@
   ],
   "orders": [
     {
-      "id": 1,
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bogor",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000"
-    },
-    {
-      "id": 2,
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000"
-    },
-    {
-      "name": "jakun",
+      "name": "aldi suep",
       "address": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
       "district": "bogor",
       "phoneNumber": "085710996038",
-      "email": "jupri@gmail.com",
-      "budget": "$.0",
-      "id": 3
-    }
-  ],
-  "bidAccept": [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget": "Rp. 150.000",
-      "employeInfo": {
-        "email": "jupri@gmail.com",
-        "password": "password",
-        "name": "jupri al kodi nambawan",
-        "address": "jalan buntu 1",
-        "district": "Bandung",
-        "age": "41",
-        "phoneNumber": "222222",
-        "gender": "cowok",
-        "ktp": "2222222222",
-        "kk": "222222222222",
-        "role": "employe"
-      }
+      "email": "aldi@gmail.com",
+      "budget": "Rp. 200.000 - Rp. 300.000",
+      "id": 4
     },
     {
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget": "",
+      "name": "aldi aldi aldi",
+      "address": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
+      "district": "bogor",
+      "phoneNumber": "085710996038",
+      "email": "lalaland@gmail.com",
+      "budget": "",
+      "id": 5
+    },
+    {
+      "name": "kontol",
+      "address": "rasta jalan buntu",
+      "district": "bandung",
+      "phoneNumber": "234234",
+      "email": "yayu@gmail.com",
+      "budget": "Rp. 200.000 - Rp. 300.000",
+      "id": 6
+    },
+    {
+      "name": "abi fathan yusuf",
+      "address": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
+      "district": "bogor",
+      "phoneNumber": "085710996038",
+      "email": "abiefathan333@gmail.com",
+      "budget": "Rp. 200.000 - Rp. 300.000",
+      "id": 7
+    }
+  ],
+  "bidPending": [
+    {
+      "name": "abi fathan yusuf",
+      "address": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
+      "district": "bogor",
+      "phoneNumber": "085710996038",
+      "email": "abiefathan333@gmail.com",
+      "budget": "Rp. 200.000 - Rp. 300.000",
+      "dealBudget": "4444444444444444444444444444444",
       "employeInfo": {
         "email": "lalaland@gmail.com",
         "password": "password",
         "name": "lalaland",
         "address": "jalan buntu 2",
-        "district": "Bogor",
+        "district": "bogor",
+        "age": "42",
+        "phoneNumber": "321321321312321",
+        "gender": "man",
+        "ktp": "321312312321",
+        "kk": "222222222222",
+        "role": "employe"
+      },
+      "id": 1
+    },
+    {
+      "name": "abi fathan yusuf",
+      "address": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
+      "district": "bogor",
+      "phoneNumber": "085710996038",
+      "email": "abiefathan333@gmail.com",
+      "budget": "Rp. 200.000 - Rp. 300.000",
+      "dealBudget": "111111111111111111111111111111111",
+      "employeInfo": {
+        "email": "yazid@gmail.com",
+        "password": "password",
+        "name": "yazid",
+        "address": "jalan buntu 2",
+        "district": "bogor",
         "age": "42",
         "phoneNumber": "321321321312321",
         "gender": "man",
@@ -88,21 +97,23 @@
         "role": "employe"
       },
       "id": 2
-    },
+    }
+  ],
+  "bidAccept": [
     {
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget": "",
+      "name": "abi fathan yusuf",
+      "address": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
+      "district": "bogor",
+      "phoneNumber": "085710996038",
+      "email": "abiefathan333@gmail.com",
+      "budget": "Rp. 200.000 - Rp. 300.000",
+      "dealBudget": "5000000000000000000000",
       "employeInfo": {
         "email": "lalaland@gmail.com",
         "password": "password",
         "name": "lalaland",
         "address": "jalan buntu 2",
-        "district": "Bogor",
+        "district": "bogor",
         "age": "42",
         "phoneNumber": "321321321312321",
         "gender": "man",
@@ -110,22 +121,22 @@
         "kk": "222222222222",
         "role": "employe"
       },
-      "id": 3
+      "id": 1
     },
     {
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget": "555555555555555555555555555555555",
+      "name": "abi fathan yusuf",
+      "address": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
+      "district": "bogor",
+      "phoneNumber": "085710996038",
+      "email": "abiefathan333@gmail.com",
+      "budget": "Rp. 200.000 - Rp. 300.000",
+      "dealBudget": "111111111111111111111111111111111",
       "employeInfo": {
-        "email": "lalaland@gmail.com",
+        "email": "yazid@gmail.com",
         "password": "password",
-        "name": "lalaland",
+        "name": "yazid",
         "address": "jalan buntu 2",
-        "district": "Bogor",
+        "district": "bogor",
         "age": "42",
         "phoneNumber": "321321321312321",
         "gender": "man",
@@ -133,53 +144,7 @@
         "kk": "222222222222",
         "role": "employe"
       },
-      "id": 4
-    },
-    {
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget": "555555555555555555555555555555555",
-      "employeInfo": {
-        "email": "lalaland@gmail.com",
-        "password": "password",
-        "name": "lalaland",
-        "address": "jalan buntu 2",
-        "district": "Bogor",
-        "age": "42",
-        "phoneNumber": "321321321312321",
-        "gender": "man",
-        "ktp": "321312312321",
-        "kk": "222222222222",
-        "role": "employe"
-      },
-      "id": 5
-    },
-    {
-      "name": "John Doe",
-      "address": "jl desa mandiri",
-      "district": "Bandung",
-      "phoneNumber": "Full Body Massage",
-      "email": "pending",
-      "budget": "Rp. 100.000 - Rp. 150.000",
-      "dealBudget": "",
-      "employeInfo": {
-        "email": "lalaland@gmail.com",
-        "password": "password",
-        "name": "lalaland",
-        "address": "jalan buntu 2",
-        "district": "Bogor",
-        "age": "42",
-        "phoneNumber": "321321321312321",
-        "gender": "man",
-        "ktp": "321312312321",
-        "kk": "222222222222",
-        "role": "employe"
-      },
-      "id": 6
+      "id": 2
     }
   ],
   "status": [
