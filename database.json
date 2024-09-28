@@ -22,8 +22,26 @@
       "status_name": "Processing"
     }
   ],
-  "transactions": [
-    
+  "transactions": [],
+  "history": [
+    {
+      "PhoneNumber_customer": "085710996038",
+      "addressCustomer": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
+      "dealBudget": "56",
+      "districtCustomer": "bogor",
+      "emailCustomer": "abiefathan22@gmail.com",
+      "emailEmploye": "lalaland@gmail.com",
+      "employeInfo": {
+        "address": "jalan buntu 2",
+        "age": "42",
+        "district": "bogor",
+        "email": "lalaland@gmail.com",
+        "gender": "man",
+        "name": "lalaland",
+        "phoneNumber": "321321321312321"
+      },
+      "id": 1
+    }
   ],
   "recruitment": [
     {

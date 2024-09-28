@@ -37,7 +37,6 @@ function isAuthenticated({ email, password }) {
 //
 // Middleware
 server.use((req, res, next) => {
-  
   if (
     req.path.startsWith('/orders') || 
     req.path.startsWith('/price') || 
@@ -45,14 +44,15 @@ server.use((req, res, next) => {
     req.path.startsWith('/bidPending') ||
     req.path.startsWith('/status') ||
     req.path.startsWith('/transactions') ||
+    req.path.startsWith('/history') || // Ini pengecualian untuk /history
     req.path.startsWith('/recruitment') ||
     req.path === '/auth/login' || 
     req.path === '/auth/register'
   ) {
     return next(); // Skip authentication
   }
-
   
+  // Pengecekan JWT untuk endpoint lain yang tidak dikecualikan
   const authHeader = req.headers.authorization;
   if (!authHeader || authHeader.split(' ')[0] !== 'Bearer') {
     return res.status(401).json({ status: 401, message: 'Error in authorization format' });
@@ -67,6 +67,7 @@ server.use((req, res, next) => {
   req.user = decoded; 
   next();
 });
+
 
 
 // Login endpoint
@@ -206,7 +207,7 @@ server.put('/users/:id', (req, res) => {
       return res.status(404).json({ status: 404, message: 'User not found' });
     }
 
-    userData.users[userIndex] = { ...userData.users[userIndex], ...req.body }; // Memperbarui data pengguna termasuk district
+    userData.users[userIndex] = { ...userData.users[userIndex], ...req.body }; 
 
     fs.writeFile(userdbPath, JSON.stringify(userData, null, 2), (err) => {
       if (err) {
