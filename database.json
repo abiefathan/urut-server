@@ -1,4 +1,24 @@
 {
+  "district": [
+    {
+      "id": 1,
+      "district": "bogor"
+    },
+    {
+      "id": 2,
+      "district": "bandung"
+    }
+  ],
+  "gender": [
+    {
+      "id": 1,
+      "gender": "man"
+    },
+    {
+      "id": 2,
+      "gender": "woman"
+    }
+  ],
   "price": [
     {
       "id": 1,
@@ -13,7 +33,35 @@
       "range": "Rp. 200.000 - Rp. 300.000"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "name": "abi fathan yusuf",
+      "address": "asdfasdasdasd",
+      "district": "bogor",
+      "phoneNumber": "8282929",
+      "email": "abiefathan333@gmail.com",
+      "budget": "Rp . 100.000 - Rp. 150.000",
+      "id": 2
+    },
+    {
+      "name": "12312312",
+      "address": "312312312",
+      "district": "depok",
+      "phoneNumber": "8282929",
+      "email": "123123@gmail.com",
+      "budget": "Rp. 150.000 - Rp. 200.000",
+      "id": 3
+    },
+    {
+      "name": "abi fathan yusuf",
+      "address": "cijujung",
+      "district": "bogor",
+      "phoneNumber": "8282929",
+      "email": "abiefathan333@gmail.com",
+      "budget": "Rp . 100.000 - Rp. 150.000",
+      "id": 4
+    }
+  ],
   "bidPending": [],
   "bidAccept": [],
   "status": [
@@ -25,12 +73,34 @@
   "transactions": [],
   "history": [
     {
-      "PhoneNumber_customer": "085710996038",
-      "addressCustomer": "desaCijujung rt05 rw04 kec.sukaraja kab.bogor",
-      "dealBudget": "56",
+      "name_Customer": "abi fathan yusuf",
+      "PhoneNumber_customer": "8282929",
+      "addressCustomer": "Cojulun",
+      "dealBudget": "3434",
       "districtCustomer": "bogor",
-      "emailCustomer": "abiefathan22@gmail.com",
+      "emailCustomer": "abiefathan333@gmail.com",
+      "emailEmploye": "yazid@gmail.com",
+      "time_transaction": "9/29/2024, 3:23:02 PM",
+      "employeInfo": {
+        "address": "jalan buntu 2",
+        "age": "42",
+        "district": "bogor",
+        "email": "yazid@gmail.com",
+        "gender": "man",
+        "name": "yazid",
+        "phoneNumber": "321321321312321"
+      },
+      "id": 1
+    },
+    {
+      "name_Customer": "abi fathan yusuf",
+      "PhoneNumber_customer": "8282929",
+      "addressCustomer": "cijujung",
+      "dealBudget": "",
+      "districtCustomer": "bogor",
+      "emailCustomer": "abiefathan333@gmail.com",
       "emailEmploye": "lalaland@gmail.com",
+      "time_transaction": "9/29/2024, 5:28:59 PM",
       "employeInfo": {
         "address": "jalan buntu 2",
         "age": "42",
@@ -40,7 +110,7 @@
         "name": "lalaland",
         "phoneNumber": "321321321312321"
       },
-      "id": 1
+      "id": 2
     }
   ],
   "recruitment": [

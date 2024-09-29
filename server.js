@@ -46,6 +46,8 @@ server.use((req, res, next) => {
     req.path.startsWith('/transactions') ||
     req.path.startsWith('/history') || // Ini pengecualian untuk /history
     req.path.startsWith('/recruitment') ||
+    req.path.startsWith('/district') ||
+    req.path.startsWith('/gender') ||
     req.path === '/auth/login' || 
     req.path === '/auth/register'
   ) {
